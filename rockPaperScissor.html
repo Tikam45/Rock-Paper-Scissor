@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="fun.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Rock Paper Scissor</h1>
+        <button onclick="
+            playGame('rock');
+        " class="imageButton"><img src="rock.jpg" alt=""></button>
+        <button onclick="
+            playGame('paper')
+        " class="imageButton"><img src="paper.jpg" alt=""></button>
+        <button onclick="
+            playGame('Scissors');
+        " class="imageButton"><img src="Scissors.jpg" alt=""></button>
+
+        <p class="result"> </p>
+        <p class="moves"></p>
+        <p class="score"></p>
+        <button onclick="
+            score.wins =0;
+            score.losses = 0;
+            score.Ties = 0;
+            localStorage.removeItem('score'); // yadi yeh nahi kare toh humne jo 06-rockPaperScissor banaya tha uska score hi aa raha hai isme. shayad same naam hai isliye.
+            // IMPORTANT:  ha yeh karna main hai tabhi toh local storage mai value change hogi varna ya toh fir score ko zero karne kai baad localStorage mai update karo
+            document.querySelector('.score').innerHTML = `Wins: ${score.wins} Losses: ${score.losses} Ties: ${score.Ties}`;
+        " class="resetButton">Reset Score</button>
+        <button class="auto-play-button" onclick="
+            autoplay();
+        ">Auto Play</button>
+    </body>
+</html>
